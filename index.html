@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppy Command Central</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loadingAnimation" class="loading-animation"></div>
+
+    <div id="mainContent" class="hidden">
+        <div class="container">
+            <h1>Puppy Command Central</h1>
+    
+                <div class="category-container">
+                    <button class="category-toggle" data-target="sound-controls">Sound Control</button>
+                    <div id="sound-controls" class="collapsible-content">
+                        <div id="sound-controls-grid" class="grid"></div>
+                        <div id="volumeSliderContainer" class="volume-slider-container">
+                            <input type="range" min="0" max="100" value="0" class="volume-slider">
+                            <span id="sliderValue" class="slider-value">100</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="category-container">
+                    <button class="category-toggle" data-target="chastity-controls">Chastity Control</button>
+                    <div id="chastity-controls" class="collapsible-content">
+                        <div class="result-info" data-target="info" id="chastity-info"></div> </br>
+                        <div id="chastity-controls-grid" class="grid"></div> </br>
+                        <div class="result-info" data-target="info" id="chastity-error"></div>
+                    </div>
+                </div>
+    
+                <div class="category-container">
+                    <button class="category-toggle" data-target="app-controls">App Control</button>
+                    <div id="app-controls" class="collapsible-content">
+                        <div id="app-controls-grid" class="grid"></div>  </br>
+                    </div>
+                </div>
+    
+                <div class="category-container">
+                    <button class="category-toggle" data-target="anydesk-controls">Misc. Control</button>
+                    <div id="anydesk-controls" class="collapsible-content">
+                      <div id="anydesk-controls-grid" class="grid"></div> <br/>
+                      <button id="toggle-anydesk-info" class="category-toggle">Anydesk Login Info</button>
+                      <div id="anydesk-info" class="collapsible-content"></div>
+                      <br/>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+
+    <dialog id="commandDialog">
+        <form method="dialog">
+            <label for="commandInput">Enter Command:</label>
+            <input type="text" id="commandInput" required>
+            <button type="button" id="sendCommandButton">Send</button>
+            <button type="button" id="closeCommandDialogButton">Close</button>
+        </form>
+    </dialog>
+
+    <dialog id="linkDialog">
+        <form method="dialog">
+            <label for="linkInput">Enter Link:</label>
+            <input type="text" id="linkInput" required>
+            <button type="button" id="sendLinkButton">Send</button>
+            <button type="button" id="closeLinkDialogButton">Close</button>
+        </form>
+    </dialog>
+
+    <!-- Add Time Dialog -->
+    <dialog id="timeDialog">
+        <h2 id="timeDialogTitle">Add/Remove Time</h2>
+        <form method="dialog">
+            <label for="timeInput">Enter time (in seconds):</label>
+            <input type="number" id="timeInput" min="1" required>
+            <button id="submitTimeButton" type="submit">Submit</button>
+            <button value="cancel">Cancel</button>
+        </form>
+    </dialog>
+
+    <!-- Pillory Dialog -->
+    <dialog id="pilloryDialog">
+        <h2>Pillory</h2>
+        <form method="dialog">
+            <label for="pilloryTimeInput">Enter pillory time (in seconds):</label>
+            <input type="number" id="pilloryTimeInput" min="1" required>
+            <label for="pilloryReasonInput">Enter pillory reason:</label>
+            <input type="text" id="pilloryReasonInput" required>
+            <button id="pillorySendButton" type="submit">Send</button>
+            <button value="cancel">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog id="tweetDialog">
+        <form method="dialog">
+            <label for="tweetInput">Enter Tweet:</label>
+            <input type="text" id="tweetInput" required>
+            <button type="button" id="sendTweetButton">Send</button>
+            <button type="button" id="closeTweetDialogButton">Close</button>
+        </form>
+    </dialog>
+
+    <dialog id="timeDialog">
+        <form method="dialog">
+            <label for="timeInput">Enter time (in seconds):</label>
+            <input type="number" id="timeInput" required min="0">
+            <button type="button" id="submitTimeButton">Submit</button>
+            <button type="button" id="closeTimeDialogButton">Cancel</button>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

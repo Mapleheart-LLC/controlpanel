@@ -1,0 +1,348 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  background-image: url('https://transparenttextures.com/patterns/green-gobbler.png');
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #a8d5ba;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #a8d5ba;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Grid styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-cell {
+  color: #e0e0e0;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.grid-cell:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* Volume slider styles */
+.volume-slider-container {
+  width: 100%;
+  max-width: 16rem;
+  height: 2rem;
+  margin: 1rem auto;
+  position: relative;
+  border-radius: 1rem;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  outline: none;
+  opacity: 1;
+  transition: opacity .2s;
+  margin: 0;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #a8d5ba;
+  cursor: pointer;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #a8d5ba;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-size: cover;
+}
+
+.slider-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Dialog styles */
+dialog {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  background: #333;
+  max-width: 400px;
+  width: 90%;
+  color: #e0e0e0;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+dialog form label {
+  font-weight: bold;
+  color: #ccc;
+}
+
+dialog form input,
+dialog form select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #444;
+  color: #fff;
+}
+
+dialog form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #a8d5ba;
+  color: #121212;
+  transition: background-color 0.3s ease;
+}
+
+dialog form button:hover {
+  background-color: #98c4a3;
+}
+
+/* Utility classes */
+.hidden {
+  display: none;
+}
+
+/* Loading animation styles */
+.loading-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #a8d5ba;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .grid-cell {
+    background-color: #333;
+  }
+
+  .volume-slider-container {
+    background-color: #333;
+  }
+
+  dialog {
+    background: #333;
+    color: #e0e0e0;
+  }
+
+  dialog form label {
+    color: #ccc;
+  }
+
+  dialog form input,
+  dialog form select {
+    border: 1px solid #555;
+    background: #444;
+    color: #fff;
+  }
+}
+
+/* Category toggle buttons */
+.category-toggle {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #a8d5ba;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.category-toggle:hover {
+  background-color: #98c4a3;
+}
+
+/* Collapsible content */
+.collapsible-content {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.collapsible-content.show {
+  display: block;
+}
+
+#chastity-info {
+  background-color: #333; /* Matches the theme background */
+  color: #e0e0e0; /* Matches the theme text color */
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#chastity-info.error {
+  background-color: #ff4d4d; /* Red background for errors */
+  color: #121212; /* Dark text for better readability on red */
+}
+
+#chastity-info h3 {
+  margin-top: 0;
+}
+
+#chastity-info p {
+  margin: 0;
+}
+
+#chastity-info.hidden {
+  display: none;
+}
+
+#chastity-error {
+  background-color: #333; /* Matches the theme background */
+  color: #e0e0e0; /* Matches the theme text color */
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: none;
+}
+
+#chastity-error.error {
+  background-color: #ff4d4d; /* Red background for errors */
+  color: #121212; /* Dark text for better readability on red */
+}
+
+#chastity-error h3 {
+  margin-top: 0;
+}
+
+#chastity-error p {
+  margin: 0;
+}
+
+#chastity-error.hidden {
+  display: none;
+}
+
+#anydesk-info {
+  display: none; /* Initially hidden */
+  padding: 1rem;
+  background-color: #333;
+  color: #e0e0e0;
+  border-radius: 1rem;
+}
+
+#anydesk-info.expanded {
+  max-height: 200px; /* Adjust to fit the expanded content */
+  background-color: #333;
+}
+
+#anydesk-info.expanded::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #a8d5ba;
+  margin-top: 10px;
+}
+
+/* Toggle button styles */
+#toggle-anydesk-info {
+  color: #e0e0e0;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, background-color 0.2s;
+  border: none;
+  font-size: 1.2rem;
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#toggle-anydesk-info:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
