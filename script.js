@@ -1,4 +1,4 @@
-let webhookUrl;
+let webhookUrl; 
 
 // Function to fetch the webhook URL
 async function fetchWebhookUrl() {
